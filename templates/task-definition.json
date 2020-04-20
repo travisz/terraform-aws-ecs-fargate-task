@@ -1,0 +1,18 @@
+[
+  {
+    "cpu": ${ecs_cpu},
+    "essential": true,
+    "image": "${image_url}",
+    "memory": ${ecs_mem},
+    "name": "${container_name}",
+    "networkkMode": "awsvpc",
+    "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+            "awslogs-group": "${log_group_name}",
+            "awslogs-region": "${log_group_region}",
+            "awslogs-stream-prefix": "${log_stream_prefix}"
+        }
+    }%{ if custom != "" }${custom}%{ else }%{ endif }
+  }
+]
