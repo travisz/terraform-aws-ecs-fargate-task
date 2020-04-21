@@ -43,5 +43,5 @@ module "ecs-task" {
 | image | Name of the Docker Image | string | `` | yes |
 | ecs_cpu | Amount of CPU for the ECS Task | number | `` | yes |
 | ecs_mem | Amount of Memory for the ECS Task | number | `` | yes |
-| log_retention_in_days | Number of days to retain CloudWatch Logs | number | `30` | yes |
+| log_retention_in_days | Number of days to retain CloudWatch Logs | number | `30` | no |
 | custom_container_definition | Custom JSON to include with the Task Definition | string | `` | no |
