@@ -1,3 +1,8 @@
+variable "region" {
+  description = "AWS Region to create the Task Definition in"
+  type        = string
+}
+
 variable "name" {
   description = "Name of the ECS Task"
   type        = string

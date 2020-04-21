@@ -2,7 +2,7 @@
 
 This module creates an ECS Task Definition.
 
-[![Actions Status](https://github.com/travisz/terraform-aws-ecs-fargate-task/workflows/Github%20Actions/badge.svg)](https://github.com/travisz/terraform-aws-ecs-fargate-task/actions)
+[![Actions Status](https://github.com/travisz/terraform-aws-ecs-fargate-task/workflows/GitHub%20Actions/badge.svg)](https://github.com/travisz/terraform-aws-ecs-fargate-task/actions)
 ![GitHub release](https://img.shields.io/github/release/travisz/terraform-aws-ecs-fargate-task.svg)
 [![](https://img.shields.io/github/license/travisz/terraform-aws-ecs-fargate-task)](https://github.com/travisz/terraform-aws-ecs-fargate-task)
 [![](https://img.shields.io/github/issues/travisz/terraform-aws-ecs-fargate-task)](https://github.com/travisz/terraform-aws-ecs-fargate-task)
