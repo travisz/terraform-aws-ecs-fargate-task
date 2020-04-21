@@ -1,0 +1,25 @@
+version: 0.2
+
+env:
+  variables:
+    TF_VERSION: "0.12.24"
+
+phases:
+  install:
+    commands:
+      - "cd /usr/bin"
+      - "curl -L -o terraform.zip https://releases.hashicorp.com/terraform/${TF_VERSION}/terraform_${TF_VERSION}_linux_amd64.zip"
+      - "unzip terraform.zip"
+  build:
+    commands:
+      - cd "$CODEBUILD_SRC_DIR"
+      - terraform init -no-color
+      - terraform fmt
+
+  post_build:
+    commands:
+      - echo "terraform fmt completed on `date`"
+
+artifacts:
+  files:
+    - '**/*'
