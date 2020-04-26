@@ -69,3 +69,4 @@ module "ecs-task" {
 | ecs_mem | Amount of Memory for the ECS Task | number | `` | yes |
 | log_retention_in_days | Number of days to retain CloudWatch Logs | number | `30` | no |
 | custom_container_definition | Custom JSON to include with the Task Definition | string | `` | no |
+| environment_vars | Environment variables to pass into the container | List of maps | `[]` | no |
