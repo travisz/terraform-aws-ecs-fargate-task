@@ -20,6 +20,29 @@ module "ecs-task" {
   image   = "hello-world"
   ecs_cpu = "256"
   ecs_mem = "1024"
+  region  = "us-east-1"
+}
+```
+
+Use the following to define environment variables (customized as needed):
+```hcl
+module "ecs-task" {
+  source           = "git::https://github.com/travisz/terraform-aws-ecs-fargate-task?ref=master"
+  name             = "task-definition"
+  image            = "hello-world"
+  ecs_cpu          = "256"
+  ecs_mem          = "1024"
+  region           = "us-east-1"
+  environment_vars = [
+    {
+      name = "DB_HOST"
+      value = "localhost"
+    },
+    {
+      name = "DB_PASS"
+      value = "password"
+    },
+  ]
 }
 ```
 
@@ -32,6 +55,7 @@ module "ecs-task" {
   image                       = "hello-world"
   ecs_cpu                     = "256"
   ecs_mem                     = "1024"
+  region                      = "us-east-1"
   custom_container_definition = ",\n    \"startTimeout\": 90"
 }
 ```
