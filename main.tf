@@ -5,6 +5,11 @@ provider "aws" {
 # Get the current region
 data "aws_region" "current" {}
 
+# Locals for Environment
+locals {
+  environment = jsonencode(var.environment_vars)
+}
+
 # CloudWatch Log Group
 resource "aws_cloudwatch_log_group" "ecs" {
   name              = var.name
@@ -36,6 +41,7 @@ data "template_file" "task_definition" {
   vars = {
     image_url         = var.image
     container_name    = var.name
+    environment       = local.environment == "[]" ? "null" : local.environment
     ecs_cpu           = var.ecs_cpu
     ecs_mem           = var.ecs_mem
     log_group_region  = data.aws_region.current.name
