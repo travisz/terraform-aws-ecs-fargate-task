@@ -41,5 +41,5 @@ variable "environment_vars" {
     value = string
   }))
   description = "The environment variables to pass to the container. This is a list of maps"
-  default     = null
+  default     = []
 }
