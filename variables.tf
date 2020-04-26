@@ -34,3 +34,12 @@ variable "custom_container_definition" {
   description = "Custom configuration for the container definition"
   type        = string
 }
+
+variable "environment_vars" {
+  type = list(object({
+    name  = string
+    value = string
+  }))
+  description = "The environment variables to pass to the container. This is a list of maps"
+  default     = []
+}

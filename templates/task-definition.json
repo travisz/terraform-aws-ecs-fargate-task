@@ -5,6 +5,7 @@
     "image": "${image_url}",
     "memory": ${ecs_mem},
     "name": "${container_name}",
+    "environment": ${environment},
     "networkkMode": "awsvpc",
     "logConfiguration": {
         "logDriver": "awslogs",
